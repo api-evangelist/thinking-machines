@@ -1,0 +1,61 @@
+generated: 2026-07-21
+method: searched
+source: https://tinker-docs.thinkingmachines.ai/tinker/data-model/
+name: Thinking Machines (Tinker) data model
+description: >-
+  The Tinker resource hierarchy and access-control boundaries, as documented in
+  the Data Model & Permissions guide. The same model governs both the Tinker
+  Console and the SDK.
+entities:
+- name: Organization
+  description: >-
+    Top-level Tinker account. Billing, user management, and org-wide settings
+    live here. Organizations are fully isolated from each other; a user may
+    belong to many.
+  relationships:
+  - has_many: User
+  - has_many: Team
+  - has_many: Project
+- name: User
+  description: An individual member of an organization, identified by email.
+  relationships:
+  - belongs_to: Organization
+- name: Team
+  description: >-
+    A group of users within an org, used to grant project access to multiple
+    users at once.
+  relationships:
+  - belongs_to: Organization
+  - has_many: User
+- name: Project
+  description: >-
+    The data-isolation boundary. Sessions, training runs, and checkpoints belong
+    to a project; access is governed by project membership.
+  relationships:
+  - belongs_to: Organization
+  - has_many: Session
+- name: Session
+  description: A connection between the SDK and Tinker; one per ServiceClient.
+  relationships:
+  - belongs_to: Project
+  - has_many: TrainingRun
+  - has_many: SamplingClient
+- name: TrainingRun
+  description: One per TrainingClient; one or more per session.
+  relationships:
+  - belongs_to: Session
+  - has_many: Checkpoint
+- name: Checkpoint
+  description: A saved model/weights state; one or more per training run.
+  relationships:
+  - belongs_to: TrainingRun
+- name: SamplingClient
+  description: An inference/sampling client; one or more per session.
+  relationships:
+  - belongs_to: Session
+permissions:
+  model: project-scoped RBAC
+  note: >-
+    If the Console shows a checkpoint you can load it via the SDK; if a role
+    denies an action in one, it denies it in the other.
+docs: https://tinker-docs.thinkingmachines.ai/tinker/data-model/

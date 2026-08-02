@@ -1,8 +1,28 @@
 aid: thinking-machines
 name: Thinking Machines
-description: 'Thinking Machines is a company surfaced as a portfolio company of accel, lightspeed-venture-partners
-  and added to the API Evangelist network as a stub for enrichment. Sector: ai. This profile is a lead
-  awaiting the enrichment pipeline.'
+description: >-
+  Thinking Machines Lab is an artificial intelligence research and product
+  company building tools to make AI systems more widely understood,
+  customizable, and generally capable. Its flagship developer product is
+  Tinker, a managed API with an official Python SDK and CLI for fine-tuning and
+  sampling open-weight language models (supervised fine-tuning, reinforcement
+  learning, and distillation), alongside Inkling, an open-weights model. The
+  Tinker platform exposes ServiceClient, TrainingClient, SamplingClient, and
+  RestClient interfaces plus OpenAI- and Anthropic-compatible inference
+  endpoints, governed by a project-scoped permission model.
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://thinkingmachines.ai/images/home.png
 url: https://raw.githubusercontent.com/api-evangelist/thinking-machines/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -13,16 +33,104 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
 - Ai
-apis: []
+- Artificial Intelligence
+- Machine Learning
+- Fine-Tuning
+- LLM
+- Model Training
+- Developer Tools
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- name: Tinker API
+  description: >-
+    Managed training/fine-tuning and sampling API for open-weight language
+    models, consumed through the official Tinker Python SDK and CLI. Supports
+    SFT, RL, and distillation workflows, checkpoint management, and OpenAI- and
+    Anthropic-compatible inference endpoints (beta).
+  humanURL: https://tinker-docs.thinkingmachines.ai/
+  baseURL: https://tinker.thinkingmachines.ai
+  tags:
+  - Fine-Tuning
+  - LLM
+  - Inference
+  properties:
+  - type: Documentation
+    url: https://tinker-docs.thinkingmachines.ai/
+  - type: APIReference
+    url: https://tinker-docs.thinkingmachines.ai/tinker/api-reference/
+  - type: Quickstart
+    url: https://tinker-docs.thinkingmachines.ai/tinker/quickstart/
+  - type: Pricing
+    url: https://tinker-docs.thinkingmachines.ai/tinker/models/
 common:
+- type: DomainSecurity
+  url: security/thinking-machines-domain-security.yml
 - type: Website
   url: https://thinkingmachines.ai/
+- type: DeveloperPortal
+  url: https://tinker-docs.thinkingmachines.ai/
+- type: Documentation
+  url: https://tinker-docs.thinkingmachines.ai/
+- type: APIReference
+  url: https://tinker-docs.thinkingmachines.ai/tinker/api-reference/
+- type: Quickstart
+  url: https://tinker-docs.thinkingmachines.ai/tinker/quickstart/
+- type: SignUp
+  url: https://tinker.thinkingmachines.ai/
+- type: Support
+  url: https://tinker-docs.thinkingmachines.ai/support/
+- type: Blog
+  url: https://thinkingmachines.ai/blog/
+- type: GitHubOrganization
+  url: https://github.com/thinking-machines-lab
+- type: TermsOfService
+  url: https://thinkingmachines.ai/legal/terms/
+- type: PrivacyPolicy
+  url: https://thinkingmachines.ai/legal/privacy/
+- type: SDKs
+  url: packages/thinking-machines-packages.yml
+- type: Packages
+  url: packages/thinking-machines-packages.yml
+- type: CLI
+  url: cli/thinking-machines-cli.yml
+- type: Authentication
+  url: authentication/thinking-machines-authentication.yml
+- type: Conventions
+  url: conventions/thinking-machines-conventions.yml
+- type: DataModel
+  url: data-model/thinking-machines-data-model.yml
+- type: ErrorCatalog
+  url: errors/thinking-machines-problem-types.yml
+- type: Conformance
+  url: conformance/thinking-machines-conformance.yml
+- type: ChangeLog
+  url: changelog/thinking-machines-changelog.yml
+- type: ChangeLog
+  url: https://tinker-docs.thinkingmachines.ai/changelog/
+- type: Lifecycle
+  url: lifecycle/thinking-machines-lifecycle.yml
+- type: Deprecation
+  url: https://tinker-docs.thinkingmachines.ai/tinker/model-deprecations/
+- type: LLMsTxt
+  url: llms/thinking-machines-llms.txt
+- type: WellKnown
+  url: well-known/thinking-machines-well-known.yml
+- type: SecurityTxt
+  url: well-known/thinking-machines-security.txt
+- type: VulnerabilityDisclosure
+  url: security/thinking-machines-vulnerability-disclosure.yml
+- type: Security
+  url: security/thinking-machines-vulnerability-disclosure.yml
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 14
+  pass: local-v1

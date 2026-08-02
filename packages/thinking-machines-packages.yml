@@ -1,0 +1,32 @@
+generated: 2026-07-21
+method: searched
+source: PyPI (pypi.org/pypi/tinker) + GitHub org github.com/thinking-machines-lab
+name: Thinking Machines client libraries and packages
+description: >-
+  First-party client libraries for the Tinker training/fine-tuning API. The
+  official Tinker Python SDK ships the `import tinker` client plus the `tinker`
+  CLI. The Tinker Cookbook provides post-training recipes and abstractions built
+  on top of the SDK.
+packages:
+- name: tinker
+  registry: pypi
+  ecosystem: python
+  url: https://pypi.org/project/tinker/
+  repository: https://github.com/thinking-machines-lab/tinker
+  documentation: https://tinker-docs.thinkingmachines.ai/
+  version: 0.23.1
+  official: true
+  summary: The official Python SDK for the Tinker API (training API and CLI).
+  install: uv pip install tinker
+  provides:
+  - Python SDK (import tinker)
+  - tinker CLI (tinker run, tinker checkpoint)
+- name: tinker-cookbook
+  registry: github
+  ecosystem: python
+  url: https://github.com/thinking-machines-lab/tinker-cookbook
+  repository: https://github.com/thinking-machines-lab/tinker-cookbook
+  official: true
+  summary: >-
+    Post-training recipes and abstractions for Tinker (SFT, RL, distillation,
+    evals) built on the Tinker SDK.

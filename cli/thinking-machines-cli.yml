@@ -1,0 +1,28 @@
+generated: 2026-07-21
+method: searched
+source: >-
+  https://tinker-docs.thinkingmachines.ai/tinker/cli/ +
+  https://tinker-docs.thinkingmachines.ai/tinker/quickstart/
+name: Thinking Machines Tinker CLI
+description: >-
+  The `tinker` command-line interface ships with the official Tinker Python SDK
+  (installed via `uv pip install tinker`). It manages training runs and
+  checkpoints against the Tinker service.
+binary: tinker
+install:
+- uv pip install tinker
+- pip install tinker
+auth: TINKER_API_KEY environment variable (see authentication artifact)
+command_groups:
+- name: run
+  description: Inspect and manage training runs.
+  examples:
+  - tinker run list
+  reference: https://tinker-docs.thinkingmachines.ai/tinker/cli/run/
+- name: checkpoint
+  description: Manage and download model checkpoints.
+  examples:
+  - tinker checkpoint download
+  reference: https://tinker-docs.thinkingmachines.ai/tinker/cli/checkpoint/
+docs: https://tinker-docs.thinkingmachines.ai/tinker/cli/
+package_ref: packages/thinking-machines-packages.yml

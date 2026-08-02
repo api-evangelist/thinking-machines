@@ -1,0 +1,37 @@
+generated: 2026-07-21
+method: probed
+source: Live probes of provider hosts' /.well-known/ paths
+name: Thinking Machines well-known endpoints
+description: >-
+  Results of probing standard /.well-known/ paths across the Thinking Machines
+  hosts. Only a security.txt was found; OIDC/OAuth/api-catalog/llms.txt were not
+  present (404). Absence is valid data.
+endpoints:
+- host: thinkingmachines.ai
+  path: /.well-known/security.txt
+  status: 200
+  file: thinking-machines-security.txt
+- host: thinkingmachines.ai
+  path: /.well-known/openid-configuration
+  status: 404
+- host: thinkingmachines.ai
+  path: /llms.txt
+  status: 404
+- host: tinker.thinkingmachines.ai
+  path: /.well-known/security.txt
+  status: 404
+- host: tinker.thinkingmachines.ai
+  path: /.well-known/openid-configuration
+  status: 404
+- host: tinker.thinkingmachines.ai
+  path: /llms.txt
+  status: 404
+- host: tinker-docs.thinkingmachines.ai
+  path: /.well-known/security.txt
+  status: 404
+- host: tinker-docs.thinkingmachines.ai
+  path: /.well-known/openid-configuration
+  status: 404
+- host: tinker-docs.thinkingmachines.ai
+  path: /llms.txt
+  status: 404

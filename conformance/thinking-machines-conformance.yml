@@ -1,0 +1,40 @@
+generated: 2026-07-21
+method: derived
+source: >-
+  Derived from Tinker docs (compatible-apis, api-reference) at
+  https://tinker-docs.thinkingmachines.ai/
+name: Thinking Machines (Tinker) conformance
+description: >-
+  Cross-cutting standards and compatibility assertions for the Tinker API,
+  each with the evidence it was derived from. Absence of a standard is recorded
+  honestly as conforms:false.
+conformance:
+- id: openai-completions-compatible
+  conforms: true
+  evidence: >-
+    Documented OpenAI Completions-compatible inference endpoint (beta) usable
+    from an OpenAI client. https://tinker-docs.thinkingmachines.ai/tinker/compatible-apis/openai/
+- id: anthropic-compatible
+  conforms: true
+  evidence: >-
+    Documented Anthropic-compatible inference endpoint (beta).
+    https://tinker-docs.thinkingmachines.ai/tinker/compatible-apis/anthropic/
+- id: cursor-pagination
+  conforms: true
+  evidence: >-
+    SDK exposes a Cursor type and *ListResponse envelopes for listing
+    checkpoints, training runs, and audit-log entries.
+- id: rfc9457
+  conforms: false
+  evidence: >-
+    Errors are surfaced as OpenAI-style typed SDK exceptions, not RFC 9457
+    application/problem+json responses.
+- id: oauth2
+  conforms: false
+  evidence: >-
+    Authentication is a single API key (TINKER_API_KEY); no OAuth 2.0 flows are
+    documented.
+- id: idempotency
+  conforms: false
+  evidence: No idempotency-key mechanism is documented in the Tinker docs.
+docs: https://tinker-docs.thinkingmachines.ai/

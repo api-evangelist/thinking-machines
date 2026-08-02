@@ -1,0 +1,32 @@
+generated: 2026-07-21
+method: searched
+source: >-
+  https://tinker-docs.thinkingmachines.ai/tinker/model-deprecations/,
+  /changelog/, /tinker/models/
+name: Thinking Machines (Tinker) lifecycle
+description: >-
+  Versioning, deprecation, and support posture for the Tinker API, SDK, and
+  supported models.
+versioning:
+  sdk: PyPI semver (tinker; current 0.23.1)
+  changelog: https://tinker-docs.thinkingmachines.ai/changelog/
+deprecation:
+  policy: true
+  models_policy_url: https://tinker-docs.thinkingmachines.ai/tinker/model-deprecations/
+  detail: >-
+    A dedicated Model Deprecations page governs when supported models are
+    retired; model availability and pricing are tracked on the Models & Pricing
+    page.
+  models_url: https://tinker-docs.thinkingmachines.ai/tinker/models/
+beta_surfaces:
+- OpenAI-compatible inference API (beta; testing/internal use)
+- Anthropic-compatible inference API (beta)
+- Console Playground (usage not billed for now)
+status_page:
+  found: false
+  note: No public status/uptime page was located during this pass.
+support:
+  email_via: https://tinker-docs.thinkingmachines.ai/support/
+  discord: true
+  feedback_tracker: https://github.com/thinking-machines-lab/tinker-feedback
+docs: https://tinker-docs.thinkingmachines.ai/tinker/model-deprecations/

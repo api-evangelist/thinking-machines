@@ -1,0 +1,59 @@
+generated: 2026-07-21
+method: derived
+source: >-
+  Derived from the documented Tinker SDK exception hierarchy at
+  https://tinker-docs.thinkingmachines.ai/tinker/api-reference/exceptions/
+name: Thinking Machines (Tinker) error catalog
+description: >-
+  Tinker exposes an OpenAI-style typed exception hierarchy in its Python SDK.
+  API status errors map to HTTP status codes; connection/timeout and internal
+  "sidecar" (local training subprocess) errors are also surfaced. Errors are
+  raised as Python exceptions rather than an RFC 9457 problem+json envelope.
+format: sdk-exceptions
+base_exception: TinkerError
+problem_types:
+- name: APIStatusError
+  http_status: null
+  description: Base class for errors returned by the API with an HTTP status code.
+- name: BadRequestError
+  http_status: 400
+  description: The request was malformed or invalid.
+- name: AuthenticationError
+  http_status: 401
+  description: Missing or invalid API key / credentials.
+- name: PermissionDeniedError
+  http_status: 403
+  description: The authenticated principal lacks access to the resource or action.
+- name: NotFoundError
+  http_status: 404
+  description: The requested resource does not exist.
+- name: ConflictError
+  http_status: 409
+  description: The request conflicts with the current state of the resource.
+- name: UnprocessableEntityError
+  http_status: 422
+  description: The request was well-formed but semantically invalid.
+- name: RateLimitError
+  http_status: 429
+  description: Too many requests; the client should back off and retry.
+- name: InternalServerError
+  http_status: 500
+  description: An unexpected error occurred on the Tinker service.
+- name: APITimeoutError
+  http_status: null
+  description: The request timed out before a response was received.
+- name: APIConnectionError
+  http_status: null
+  description: A network error prevented reaching the Tinker service.
+- name: APIResponseValidationError
+  http_status: null
+  description: The response could not be validated against the expected schema.
+- name: RequestFailedError
+  http_status: null
+  description: A submitted request/operation failed on the server side.
+- name: SidecarError
+  http_status: null
+  description: >-
+    Base class for local training "sidecar" subprocess failures (also
+    SidecarDiedError, SidecarStartupError, SidecarIPCError).
+docs: https://tinker-docs.thinkingmachines.ai/tinker/api-reference/exceptions/

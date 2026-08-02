@@ -1,0 +1,61 @@
+generated: 2026-07-21
+method: searched
+source: https://tinker-docs.thinkingmachines.ai/changelog/
+name: Thinking Machines (Tinker) changelog
+description: >-
+  Notable updates to the Tinker SDK, the Tinker Cookbook, the Tinker Console,
+  and the Tinker documentation. SDK/Cookbook entries are dated by PyPI release,
+  Console entries by launch date, Docs entries by merge-to-main date.
+scheme: dated-multitrack
+current_sdk_version: 0.23.1
+entries:
+- release: SDK 0.23.1
+  date: '2026-07-18'
+  highlights: >-
+    Fixed RestClient.get_audit_log() failing when the audit-log response
+    redirects to a signed download URL; the redirect is now followed correctly.
+  breaking: false
+- release: Docs
+  date: '2026-07-17'
+  highlights: >-
+    Models & Pricing updated for new pricing effective July 17: prefill, sample,
+    and training rates rose on standard context-length models (cached prefill
+    stays 20% of prefill).
+  breaking: false
+- release: Docs
+  date: '2026-07-16'
+  highlights: >-
+    New Data Model & Permissions guide covering organizations, teams, projects,
+    sessions, training runs, and checkpoints.
+  breaking: false
+- release: SDK 0.23.0
+  date: '2026-07-15'
+  highlights: >-
+    SampleResponse now reports prompt_cache_hit_tokens (prompt tokens billed as
+    prefix-cache hits).
+  breaking: false
+- release: Cookbook 0.5.0
+  date: '2026-07-15'
+  highlights: >-
+    Added a Modal inference integration (tinker_cookbook.inference.modal) that
+    turns a tinker:// LoRA checkpoint into an OpenAI-compatible endpoint.
+  breaking: false
+- release: Console
+  date: '2026-07-15'
+  highlights: >-
+    Launched the Playground (open to all organizations, usage not billed for
+    now) for chatting with Inkling directly in the console.
+  breaking: false
+- release: Console
+  date: '2026-07-08'
+  highlights: >-
+    The console is now served at tinker.thinkingmachines.ai; the previous
+    tinker-console.thinkingmachines.ai address now redirects there.
+  breaking: false
+- release: Console
+  date: '2026-07-06'
+  highlights: >-
+    Added a Session Metrics view to every session page with time-series panels
+    for training and sampling traffic.
+  breaking: false
+docs: https://tinker-docs.thinkingmachines.ai/changelog/

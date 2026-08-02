@@ -1,0 +1,29 @@
+generated: 2026-07-21
+method: searched
+source: https://tinker-docs.thinkingmachines.ai/tinker/quickstart/
+name: Thinking Machines (Tinker) authentication
+description: >-
+  The Tinker API and SDK authenticate with a single API key issued from the
+  Tinker Console. The key is supplied to the SDK/CLI via the TINKER_API_KEY
+  environment variable and is sent as a bearer credential to the service.
+schemes:
+- id: api_key
+  type: apiKey
+  in: env
+  name: TINKER_API_KEY
+  transport: bearer
+  description: >-
+    Personal/organization API key obtained from the Tinker Console
+    (https://tinker.thinkingmachines.ai/). Set as `export TINKER_API_KEY=...`;
+    the Python SDK (import tinker) and the tinker CLI read it automatically.
+  provisioning: https://tinker.thinkingmachines.ai/
+oauth2: false
+openid_connect: false
+mutual_tls: false
+notes: >-
+  Access control is enforced beyond authentication via a project-scoped
+  permission model (organizations, teams, projects, sessions) documented at
+  https://tinker-docs.thinkingmachines.ai/tinker/data-model/. The SDK surfaces
+  AuthenticationError and PermissionDeniedError for credential/authorization
+  failures.
+docs: https://tinker-docs.thinkingmachines.ai/tinker/quickstart/

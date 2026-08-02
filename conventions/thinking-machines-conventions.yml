@@ -1,0 +1,54 @@
+generated: 2026-07-21
+method: searched
+source: >-
+  https://tinker-docs.thinkingmachines.ai/ (quickstart, data-model,
+  api-reference, changelog)
+name: Thinking Machines (Tinker) API conventions
+description: >-
+  Cross-cutting runtime semantics for the Tinker training/fine-tuning API and
+  its Python SDK.
+auth:
+  style: api-key
+  header: TINKER_API_KEY (env) sent as bearer credential
+  ref: authentication/thinking-machines-authentication.yml
+pagination:
+  style: cursor
+  evidence: >-
+    SDK types include Cursor and *ListResponse envelopes (e.g.
+    CheckpointsListResponse, TrainingRunsResponse, AuditLogResponse) indicating
+    cursor-based listing.
+error_envelope:
+  style: sdk-exceptions
+  detail: >-
+    OpenAI-style typed exceptions mapped to HTTP status codes; not RFC 9457
+    problem+json.
+  ref: errors/thinking-machines-problem-types.yml
+versioning:
+  style: sdk-semver
+  detail: >-
+    Client versioned via PyPI semver (tinker); notable changes tracked in a
+    dated changelog. Model availability/retirement governed by a separate Model
+    Deprecations policy.
+  ref: changelog/thinking-machines-changelog.yml
+audit_logging:
+  supported: true
+  detail: >-
+    RestClient.get_audit_log() returns AuditLogResponse / AuditLogEntry records
+    for organization and project activity.
+permissions:
+  model: >-
+    Project-scoped RBAC across Organization > Users/Teams > Projects > Sessions
+    > Training runs > Checkpoints; the same permissions apply to Console and SDK.
+  ref: data-model/thinking-machines-data-model.yml
+compatible_apis:
+  openai: >-
+    OpenAI Completions-compatible inference endpoint (beta) for sampling from
+    checkpoints.
+  anthropic: Anthropic-compatible inference endpoint (beta).
+idempotency:
+  documented: false
+  note: No idempotency-key mechanism is documented in the public Tinker docs.
+rate_limiting:
+  documented: true
+  note: RateLimitError (HTTP 429) is raised by the SDK; no published quota table.
+docs: https://tinker-docs.thinkingmachines.ai/
