@@ -10,6 +10,17 @@ description: >-
   Tinker platform exposes ServiceClient, TrainingClient, SamplingClient, and
   RestClient interfaces plus OpenAI- and Anthropic-compatible inference
   endpoints, governed by a project-scoped permission model.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
