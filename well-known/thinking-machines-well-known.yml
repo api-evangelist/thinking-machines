@@ -2,10 +2,8 @@ generated: 2026-07-21
 method: probed
 source: Live probes of provider hosts' /.well-known/ paths
 name: Thinking Machines well-known endpoints
-description: >-
-  Results of probing standard /.well-known/ paths across the Thinking Machines
-  hosts. Only a security.txt was found; OIDC/OAuth/api-catalog/llms.txt were not
-  present (404). Absence is valid data.
+description: Results of probing standard /.well-known/ paths across the Thinking Machines hosts. Only
+  a security.txt was found; OIDC/OAuth/api-catalog/llms.txt were not present (404). Absence is valid data.
 endpoints:
 - host: thinkingmachines.ai
   path: /.well-known/security.txt
@@ -35,3 +33,16 @@ endpoints:
 - host: tinker-docs.thinkingmachines.ai
   path: /llms.txt
   status: 404
+hosts:
+- host: ''
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: thinking-machines-security.txt
+x-shape-fix:
+  converted: '2026-08-20'
+  from: endpoints
+  note: Rewritten into hosts[] -> documents[], the only shape well_known_docs() in score.rb reads. A served
+    .well-known surface recorded in any other shape scores as absent. Promoted ONLY the 2xx rows out of
+    the probe log; non-2xx probes are real negative results and were left in place, not converted into
+    documents.
