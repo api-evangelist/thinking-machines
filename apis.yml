@@ -94,6 +94,8 @@ apis:
   - type: Pricing
     url: https://tinker-docs.thinkingmachines.ai/tinker/models/
 common:
+- type: Plans
+  url: plans/thinking-machines-plans-pricing.yml
 - url: https://thinkingmachines.ai/blog/index.xml
   type: BlogRSS
 - type: DomainSecurity
