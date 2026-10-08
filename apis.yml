@@ -55,6 +55,7 @@ tags:
 - Model Training
 - Developer Tools
 - Foundation Models
+- Reinforcement Learning
 tags_raw:
 - Company
 - Ai
@@ -66,6 +67,7 @@ tags_raw:
 - Developer Tools
 - Machine-Learning
 - Foundation Models
+- Reinforcement Learning
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -158,6 +160,8 @@ common:
   url: security/thinking-machines-vulnerability-disclosure.yml
 - type: Security
   url: security/thinking-machines-vulnerability-disclosure.yml
+- type: APIReference
+  url: https://tinker-docs.thinkingmachines.ai/tinker/api-reference/restclient/
 x-enrichment:
   date: '2026-07-21'
   status: enriched
